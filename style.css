@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(mountain.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.ocean{
+    position: absolute;
+  width: 100%;
+  height: 250px;
+bottom: 0;
+left: 0;
+}
+.water{
+ position: absolute;
+ height: 100%;
+ right: 0;
+  animation: water 13s linear infinite; 
+}
+@keyframes water {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(1000px);
+    }
+}
+.boat{
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    bottom:220px;
+    -webkit-box-reflect: below 0 linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.6));
+transform: translateX(-50%);
+animation: boat 4s linear infinite;
+}
+@keyframes boat{
+    0%{
+     transform: rotate(0deg) translateY(0);
+    }
+    25%{
+    transform: rotate(-3deg)  translateY(-3px);
+    }
+    50%{
+    transform: rotate(0deg)  translateY(-5px);
+    }
+    75%{
+    transform: rotate(3deg)  translateY(-3px);
+    }
+    100%{
+     transform: rotate(0deg)  translateY(0);
+    }
+}
+    
+.cloud{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    right: 0;
+    left: 0;
+animation: cloud 20s linear infinite;
+}
+@keyframes cloud {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(250px);
+    }
+    100%{
+        transform: translateX(500px);
+    }
+
+}
+@media (max-width: 991px) {
+    .container{
+        background-position: unset;
+    }
+.boat {
+    width: 190px;
+    left: 25%;
+    bottom: 170px;
+}
+    .ocean{
+        height: 190px;
+    }
+}
